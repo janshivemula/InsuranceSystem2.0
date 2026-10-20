@@ -1,4 +1,6 @@
 using InsuranceSystem2._0.Data;
+using InsuranceSystem2._0.Middleware;
+using InsuranceSystem2._0.MappingProfile;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -17,13 +19,26 @@ namespace InsuranceSystem2._0
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("InsuranceConnection2")));
 
+            // AutoMapper
+            builder.Services.AddAutoMapper(opt =>
+            {
+                opt.AddProfile<AutoMapperProfile>();
+            });
+
             // Authorization
             builder.Services.AddAuthorization();
 
             var app = builder.Build();
 
+            // Seed default admin
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                await DbSeeder.SeedAdminAsync(dbContext);
+            }
+
             // Middleware
-          //  app.UseMiddleware<ExceptionMiddleware>();
+            app.UseMiddleware<ExceptionMiddleware>();
 
 
             // Swagger

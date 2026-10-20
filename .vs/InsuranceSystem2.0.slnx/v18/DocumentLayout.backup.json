@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\mappingprofile\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\mappingprofile\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\helpers\\claimstatusvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\helpers\\claimstatusvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\exceptions\\duplicateresourceexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\exceptions\\duplicateresourceexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\dtos\\product\\productresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -163,10 +199,6 @@
       "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|c:\\users\\rajak\\source\\repos\\insurancesystem2.0\\insurancesystem2.0\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{38946F99-7D17-293F-BFE6-29B3AE9BAD9A}|InsuranceSystem2.0\\InsuranceSystem2.0.csproj|solutionrelative:insurancesystem2.0\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -242,24 +274,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\MappingProfile\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\MappingProfile\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\MappingProfile\\AutoMapperProfile.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\MappingProfile\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:19:47.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:16:28.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClaimStatusValidator.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Helpers\\ClaimStatusValidator.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Helpers\\ClaimStatusValidator.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Helpers\\ClaimStatusValidator.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Helpers\\ClaimStatusValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:14:13.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:12:02.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Program.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Program.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Program.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T16:26:20.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DuplicateResourceException.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\DuplicateResourceException.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Exceptions\\DuplicateResourceException.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\DuplicateResourceException.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Exceptions\\DuplicateResourceException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:11:13.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConflictException.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\ConflictException.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Exceptions\\ConflictException.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\ConflictException.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Exceptions\\ConflictException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:10:27.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BadRequestException.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\BadRequestException.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Exceptions\\BadRequestException.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Exceptions\\BadRequestException.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Exceptions\\BadRequestException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:09:34.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Data\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Data\\DbSeeder.cs",
+              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Data\\DbSeeder.cs",
+              "RelativeToolTip": "InsuranceSystem2.0\\Data\\DbSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:07:02.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ProductResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Product\\ProductResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Product\\ProductResponseDto.cs",
               "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Product\\ProductResponseDto.cs",
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Product\\ProductResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA5wA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-20T09:48:57.162Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "ProductRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Product\\ProductRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Product\\ProductRequestDto.cs",
@@ -267,12 +416,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Product\\ProductRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:48:18.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:48:18.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "PremiumPaymentResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentResponseDto.cs",
@@ -280,12 +428,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:47:00.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:47:00.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "PremiumPaymentRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentRequestDto.cs",
@@ -293,12 +440,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\PremiumPayent\\PremiumPaymentRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:46:21.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:46:21.095Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "PolicyResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Policy\\PolicyResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Policy\\PolicyResponseDto.cs",
@@ -306,12 +452,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Policy\\PolicyResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:45:10.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:45:10.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "PurchasePolicyRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Policy\\PurchasePolicyRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Policy\\PurchasePolicyRequestDto.cs",
@@ -319,12 +464,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Policy\\PurchasePolicyRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:44:08.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:44:08.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "PolicyQueryDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Policy\\PolicyQueryDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Policy\\PolicyQueryDto.cs",
@@ -332,12 +476,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Policy\\PolicyQueryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:43:10.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:43:10.091Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "IssuePolicyRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Policy\\IssuePolicyRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Policy\\IssuePolicyRequestDto.cs",
@@ -345,12 +488,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Policy\\IssuePolicyRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:42:24.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:42:24.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "PlanResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Plan\\PlanResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Plan\\PlanResponseDto.cs",
@@ -358,12 +500,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Plan\\PlanResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:41:12.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:41:12.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "PlanRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Plan\\PlanRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Plan\\PlanRequestDto.cs",
@@ -371,12 +512,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Plan\\PlanRequestDto.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA1wB8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:40:28.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:40:28.59Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "CustomerResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Customer\\CustomerResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerResponseDto.cs",
@@ -384,12 +524,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerResponseDto.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAQwBgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:39:00.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:39:00.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "CustomerRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Customer\\CustomerRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerRequestDto.cs",
@@ -397,12 +536,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerRequestDto.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA1wCcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:38:20.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:38:20.382Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "CustomerQueryDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Customer\\CustomerQueryDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerQueryDto.cs",
@@ -410,12 +548,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Customer\\CustomerQueryDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:37:33.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:37:33.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "SupportingDocumentDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\SupportingDocumentDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\SupportingDocumentDto.cs",
@@ -423,12 +560,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\SupportingDocumentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:36:09.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:36:09.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "ClaimStatusHistoryResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimStatusHistoryResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimStatusHistoryResponseDto.cs",
@@ -436,12 +572,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimStatusHistoryResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:35:30.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:35:30.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "ClaimReviewDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimReviewDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimReviewDto.cs",
@@ -449,12 +584,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimReviewDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:33:55.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:33:55.865Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "ClaimResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimResponseDto.cs",
@@ -462,12 +596,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimResponseDto.cs",
               "ViewState": "AgIAABQAAAAAAAAAAADwvx8AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:32:59.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:32:59.746Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "ClaimRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimRequestDto.cs",
@@ -475,12 +608,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimRequestDto.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAYwCAAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:32:17.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:32:17.488Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "ClaimPaginationRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimPaginationRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimPaginationRequestDto.cs",
@@ -488,12 +620,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimPaginationRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:31:35.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:31:35.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 28,
               "Title": "ClaimDocumentResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentResponseDto.cs",
@@ -501,12 +632,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:31:03.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:31:03.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 29,
               "Title": "ClaimDocumentRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentRequestDto.cs",
@@ -514,12 +644,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDocumentRequestDto.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAzwBQAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:30:20.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:30:20.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 30,
               "Title": "ClaimDecisionDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Claim\\ClaimDecisionDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDecisionDto.cs",
@@ -527,12 +656,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Claim\\ClaimDecisionDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T09:29:24.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T09:29:24.614Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 31,
               "Title": "ForgotPasswordRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Auth\\ForgotPasswordRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Auth\\ForgotPasswordRequestDto.cs",
@@ -540,12 +668,11 @@
               "RelativeToolTip": "InsuranceSystem2.0\\DTOs\\Auth\\ForgotPasswordRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T06:12:08.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T06:12:08.639Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 32,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Auth\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Auth\\LoginRequestDto.cs",
@@ -557,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 33,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Auth\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Auth\\LoginResponseDto.cs",
@@ -569,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 34,
               "Title": "RegisterRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Auth\\RegisterRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Auth\\RegisterRequestDto.cs",
@@ -581,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 35,
               "Title": "ResetPasswordRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Auth\\ResetPasswordRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Auth\\ResetPasswordRequestDto.cs",
@@ -593,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 36,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\ApiResponse.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\ApiResponse.cs",
@@ -605,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 37,
               "Title": "ErrorResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\ErrorResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\ErrorResponseDto.cs",
@@ -617,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 38,
               "Title": "PagedResponse.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\PagedResponse.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\PagedResponse.cs",
@@ -629,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 39,
               "Title": "PaginationRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\PaginationRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\PaginationRequestDto.cs",
@@ -641,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 40,
               "Title": "PolicyPlanQueryDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\PolicyPlanQueryDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\PolicyPlanQueryDto.cs",
@@ -653,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 41,
               "Title": "ProductQueryDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\Common\\ProductQueryDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\Common\\ProductQueryDto.cs",
@@ -665,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 42,
               "Title": "CreateAdminRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\User\\CreateAdminRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\User\\CreateAdminRequestDto.cs",
@@ -677,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 43,
               "Title": "CreateInternalStaffRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\User\\CreateInternalStaffRequestDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\User\\CreateInternalStaffRequestDto.cs",
@@ -689,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 44,
               "Title": "UserQueryDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\User\\UserQueryDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\User\\UserQueryDto.cs",
@@ -701,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 45,
               "Title": "UserResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\User\\UserResponseDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\User\\UserResponseDto.cs",
@@ -713,7 +840,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 46,
               "Title": "UserStatusUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\DTOs\\User\\UserStatusUpdateDto.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\DTOs\\User\\UserStatusUpdateDto.cs",
@@ -725,7 +852,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 47,
               "Title": "20261019164710_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Migrations\\20261019164710_InitialCreate.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Migrations\\20261019164710_InitialCreate.cs",
@@ -737,7 +864,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 48,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\appsettings.json",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\appsettings.json",
@@ -749,19 +876,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Program.cs",
-              "RelativeDocumentMoniker": "InsuranceSystem2.0\\Program.cs",
-              "ToolTip": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Program.cs",
-              "RelativeToolTip": "InsuranceSystem2.0\\Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T16:26:20.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 49,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Data\\AppDbContext.cs",
@@ -773,7 +888,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 50,
               "Title": "Policy.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\Policy.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\Policy.cs",
@@ -785,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 51,
               "Title": "InsuranceProduct.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\InsuranceProduct.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\InsuranceProduct.cs",
@@ -797,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 52,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\Customer.cs",
@@ -809,7 +924,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 53,
               "Title": "ClaimStatusHistory.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\ClaimStatusHistory.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\ClaimStatusHistory.cs",
@@ -821,7 +936,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 54,
               "Title": "ClaimDocument.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\ClaimDocument.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\ClaimDocument.cs",
@@ -833,7 +948,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 55,
               "Title": "Claim.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\Claim.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\Claim.cs",
@@ -845,7 +960,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 56,
               "Title": "PolicyPlan.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\PolicyPlan.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\PolicyPlan.cs",
@@ -857,7 +972,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 57,
               "Title": "PremiumPayment.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\PremiumPayment.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\PremiumPayment.cs",
@@ -869,7 +984,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 58,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Models\\User.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Models\\User.cs",
@@ -881,7 +996,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 59,
               "Title": "ClaimStatus.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\ClaimStatus.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\ClaimStatus.cs",
@@ -893,7 +1008,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 60,
               "Title": "PaymentMode.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\PaymentMode.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\PaymentMode.cs",
@@ -905,7 +1020,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 61,
               "Title": "PaymentStatus.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\PaymentStatus.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\PaymentStatus.cs",
@@ -917,7 +1032,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 62,
               "Title": "PolicyStatus.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\PolicyStatus.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\PolicyStatus.cs",
@@ -929,7 +1044,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 63,
               "Title": "PremiumType.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\PremiumType.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\PremiumType.cs",
@@ -941,7 +1056,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 64,
               "Title": "ProductType.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\ProductType.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\ProductType.cs",
@@ -953,7 +1068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 65,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\rajak\\source\\repos\\InsuranceSystem2.0\\InsuranceSystem2.0\\Enums\\UserRole.cs",
               "RelativeDocumentMoniker": "InsuranceSystem2.0\\Enums\\UserRole.cs",
