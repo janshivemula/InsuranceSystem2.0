@@ -1,4 +1,5 @@
 ﻿using InsuranceSystem2._0.Enums;
+using InsuranceSystem2._0.DTOs.Common;
 
 namespace InsuranceSystem2._0.DTOs.User
 {
