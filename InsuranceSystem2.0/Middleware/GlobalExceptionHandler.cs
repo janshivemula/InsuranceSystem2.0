@@ -1,37 +1,31 @@
-﻿using InsuranceSystem2._0.DTOs.Common;
+﻿
+using InsuranceSystem2._0.DTOs.Common;
 using InsuranceSystem2._0.Exceptions;
+using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
 using System.Text.Json;
 
 namespace InsuranceSystem2._0.Middleware
 {
-    public class ExceptionMiddleware
+    public class GlobalExceptionHandler : IExceptionHandler
     {
-        private readonly RequestDelegate _next;
-        private readonly ILogger<ExceptionMiddleware> _logger;
+        private readonly ILogger<GlobalExceptionHandler> _logger;
 
-        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
+        public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
         {
-            _next = next;
             _logger = logger;
         }
 
-        public async Task InvokeAsync(HttpContext context)
+        public async ValueTask<bool> TryHandleAsync(
+            HttpContext context,
+            Exception exception,
+            CancellationToken cancellationToken)
         {
-            try
-            {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, ex.Message);
+            _logger.LogError(
+                exception,
+                "An exception occurred: {Message}",
+                exception.Message);
 
-                await HandleExceptionAsync(context, ex);
-            }
-        }
-
-        private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
-        {
             context.Response.ContentType = "application/json";
 
             var response = new ErrorResponseDto
@@ -43,7 +37,8 @@ namespace InsuranceSystem2._0.Middleware
             switch (exception)
             {
                 case BadRequestException:
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    context.Response.StatusCode =
+                        (int)HttpStatusCode.BadRequest;
 
                     response.StatusCode = StatusCodes.Status400BadRequest;
                     response.ErrorType = "Bad Request";
@@ -51,7 +46,8 @@ namespace InsuranceSystem2._0.Middleware
                     break;
 
                 case NotFoundException:
-                    context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                    context.Response.StatusCode =
+                        (int)HttpStatusCode.NotFound;
 
                     response.StatusCode = StatusCodes.Status404NotFound;
                     response.ErrorType = "Not Found";
@@ -59,7 +55,8 @@ namespace InsuranceSystem2._0.Middleware
                     break;
 
                 case ConflictException:
-                    context.Response.StatusCode = (int)HttpStatusCode.Conflict;
+                    context.Response.StatusCode =
+                        (int)HttpStatusCode.Conflict;
 
                     response.StatusCode = StatusCodes.Status409Conflict;
                     response.ErrorType = "Conflict";
@@ -67,7 +64,8 @@ namespace InsuranceSystem2._0.Middleware
                     break;
 
                 case UnauthorizedAccessException:
-                    context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+                    context.Response.StatusCode =
+                        (int)HttpStatusCode.Forbidden;
 
                     response.StatusCode = StatusCodes.Status403Forbidden;
                     response.ErrorType = "Forbidden";
@@ -75,9 +73,12 @@ namespace InsuranceSystem2._0.Middleware
                     break;
 
                 default:
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    context.Response.StatusCode =
+                        (int)HttpStatusCode.InternalServerError;
 
-                    response.StatusCode = StatusCodes.Status500InternalServerError;
+                    response.StatusCode =
+                        StatusCodes.Status500InternalServerError;
+
                     response.ErrorType = "Internal Server Error";
                     response.Message = "An unexpected error occurred.";
                     break;
@@ -85,7 +86,11 @@ namespace InsuranceSystem2._0.Middleware
 
             var json = JsonSerializer.Serialize(response);
 
-            await context.Response.WriteAsync(json);
+            await context.Response.WriteAsync(
+                json,
+                cancellationToken);
+
+            return true;
         }
     }
 }

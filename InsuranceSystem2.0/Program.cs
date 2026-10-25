@@ -129,7 +129,13 @@ namespace InsuranceSystem2._0
                 });
             });
 
+
+            // Middleware
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+            builder.Services.AddProblemDetails();
+
             var app = builder.Build();
+            app.UseExceptionHandler();
 
             // Seed default admin
             using (var scope = app.Services.CreateScope())
@@ -137,10 +143,7 @@ namespace InsuranceSystem2._0
                 var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 await DbSeeder.SeedAdminAsync(dbContext);
             }
-
-            // Middleware
-            app.UseMiddleware<ExceptionMiddleware>();
-
+   
 
             // Swagger
             if (app.Environment.IsDevelopment())
