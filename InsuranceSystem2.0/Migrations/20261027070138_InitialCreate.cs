@@ -30,6 +30,27 @@ namespace InsuranceSystem2._0.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PendingRegistrations",
+                columns: table => new
+                {
+                    PendingRegistrationId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    MobileNumber = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    OtpHash = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    OtpExpiry = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FailedAttempts = table.Column<int>(type: "int", nullable: false),
+                    LastOtpSentAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PendingRegistrations", x => x.PendingRegistrationId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -168,6 +189,10 @@ namespace InsuranceSystem2._0.Migrations
                     ClaimStatus = table.Column<int>(type: "int", nullable: false),
                     StaffRemarks = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     AdminRemarks = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    ReviewedByUserId = table.Column<int>(type: "int", nullable: true),
+                    ReviewedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DecidedByUserId = table.Column<int>(type: "int", nullable: true),
+                    DecidedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -185,6 +210,18 @@ namespace InsuranceSystem2._0.Migrations
                         column: x => x.PolicyId,
                         principalTable: "Policies",
                         principalColumn: "PolicyId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Claims_Users_DecidedByUserId",
+                        column: x => x.DecidedByUserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Claims_Users_ReviewedByUserId",
+                        column: x => x.ReviewedByUserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -290,9 +327,19 @@ namespace InsuranceSystem2._0.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Claims_DecidedByUserId",
+                table: "Claims",
+                column: "DecidedByUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Claims_PolicyId",
                 table: "Claims",
                 column: "PolicyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Claims_ReviewedByUserId",
+                table: "Claims",
+                column: "ReviewedByUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ClaimStatusHistories_ClaimId",
@@ -314,6 +361,12 @@ namespace InsuranceSystem2._0.Migrations
                 name: "IX_InsuranceProducts_ProductName",
                 table: "InsuranceProducts",
                 column: "ProductName",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PendingRegistrations_Email",
+                table: "PendingRegistrations",
+                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -374,6 +427,9 @@ namespace InsuranceSystem2._0.Migrations
 
             migrationBuilder.DropTable(
                 name: "ClaimStatusHistories");
+
+            migrationBuilder.DropTable(
+                name: "PendingRegistrations");
 
             migrationBuilder.DropTable(
                 name: "PremiumPayments");

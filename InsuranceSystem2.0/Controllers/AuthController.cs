@@ -17,7 +17,8 @@ namespace InsuranceSystem2._0.Controllers
             _authService = authService;
         }
 
-        // Customer Registration
+        // CHANGED: Step 1 of registration. Validates the form and emails an OTP.
+        // The user is NOT created here anymore.
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequestDto requestDto)
         {
@@ -26,7 +27,31 @@ namespace InsuranceSystem2._0.Controllers
 
             var result = await _authService.RegisterCustomerAsync(requestDto);
 
+            return Ok(result);
+        }
+
+        // NEW: Step 2 of registration. Verifies the OTP and creates the user.
+        [HttpPost("verify-otp")]
+        public async Task<IActionResult> VerifyOtp(VerifyOtpRequestDto requestDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _authService.VerifyRegistrationOtpAsync(requestDto);
+
             return Created("", result);
+        }
+
+        // NEW: Sends a fresh OTP (60 second cooldown).
+        [HttpPost("resend-otp")]
+        public async Task<IActionResult> ResendOtp(ResendOtpRequestDto requestDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _authService.ResendRegistrationOtpAsync(requestDto);
+
+            return Ok(result);
         }
 
         // Login

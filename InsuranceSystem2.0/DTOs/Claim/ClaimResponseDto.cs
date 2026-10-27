@@ -25,6 +25,16 @@ namespace InsuranceSystem2._0.DTOs.Claim
         public string? StaffRemarks { get; set; }
         public string? AdminRemarks { get; set; }
 
+        // Staff member who most recently reviewed the claim
+        public int? ReviewedByUserId { get; set; }
+        public string? ReviewedByName { get; set; }
+        public DateTime? ReviewedAt { get; set; }
+
+        // Admin who made the final decision
+        public int? DecidedByUserId { get; set; }
+        public string? DecidedByName { get; set; }
+        public DateTime? DecidedAt { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 
@@ -32,3 +42,4 @@ namespace InsuranceSystem2._0.DTOs.Claim
         public List<ClaimStatusHistoryResponseDto> StatusHistory { get; set; } = new();
     }
 }
+

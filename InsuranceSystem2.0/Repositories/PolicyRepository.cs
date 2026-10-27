@@ -19,7 +19,6 @@ namespace InsuranceSystem2._0.Repositories.Implementations
         }
 
         // Select policy details and related data.
-
         private IQueryable<Policy> GetPolicyQuery()
         {
             return _context.Policies.Select(p => new Policy
@@ -34,9 +33,12 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 CreatedDate = p.CreatedDate,
 
                 // Include payment tracking properties
+                InsuranceProductId = p.InsuranceProductId,   // NEW
                 TotalPremiumPaid = p.TotalPremiumPaid,
                 LastPaymentDate = p.LastPaymentDate,
                 NextDueDate = p.NextDueDate,
+                IsPaymentDue = p.IsPaymentDue,               // NEW
+                InstallmentsPaid = p.InstallmentsPaid,       // NEW
                 UpdatedDate = p.UpdatedDate,
 
                 Customer = p.Customer == null ? null : new Customer
@@ -68,7 +70,6 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 Payments = p.Payments.ToList()
             });
         }
-
 
         // Retrieves all policies with filtering, sorting and pagination.
         public async Task<PagedResult<Policy>> GetAllAsync(
@@ -190,10 +191,20 @@ namespace InsuranceSystem2._0.Repositories.Implementations
         }
 
         // Updates an existing policy.
-        public Task UpdateAsync(Policy policy)
+        // CHANGED: copies only the fields the services modify, so a partial
+        // projection can never overwrite InsuranceProductId, PlanId or CustomerId.
+        public async Task UpdateAsync(Policy policy)
         {
-            _context.Policies.Update(policy);
-            return Task.CompletedTask;
+            var tracked = await _context.Policies
+                .FirstAsync(p => p.PolicyId == policy.PolicyId);
+
+            tracked.PolicyStatus = policy.PolicyStatus;
+            tracked.TotalPremiumPaid = policy.TotalPremiumPaid;
+            tracked.LastPaymentDate = policy.LastPaymentDate;
+            tracked.NextDueDate = policy.NextDueDate;
+            tracked.IsPaymentDue = policy.IsPaymentDue;
+            tracked.InstallmentsPaid = policy.InstallmentsPaid;
+            tracked.UpdatedDate = policy.UpdatedDate;
         }
 
         // Saves all pending changes to the database.

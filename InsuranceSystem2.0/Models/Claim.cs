@@ -47,6 +47,22 @@ namespace InsuranceSystem2._0.Models
         [StringLength(500)]
         public string? AdminRemarks { get; set; }
 
+        // Staff member who most recently reviewed the claim
+        public int? ReviewedByUserId { get; set; }
+
+        [ForeignKey(nameof(ReviewedByUserId))]
+        public User? ReviewedByUser { get; set; }
+
+        public DateTime? ReviewedAt { get; set; }
+
+        // Admin who made the final claim decision
+        public int? DecidedByUserId { get; set; }
+
+        [ForeignKey(nameof(DecidedByUserId))]
+        public User? DecidedByUser { get; set; }
+
+        public DateTime? DecidedAt { get; set; }
+
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         public DateTime UpdatedDate { get; set; } = DateTime.Now;
@@ -58,4 +74,3 @@ namespace InsuranceSystem2._0.Models
         public ICollection<ClaimStatusHistory> ClaimStatusHistories { get; set; } = new List<ClaimStatusHistory>();
     }
 }
-

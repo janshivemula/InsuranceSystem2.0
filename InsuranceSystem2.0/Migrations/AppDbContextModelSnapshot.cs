@@ -56,10 +56,22 @@ namespace InsuranceSystem2._0.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("DecidedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DecidedByUserId")
+                        .HasColumnType("int");
+
                     b.Property<DateOnly>("IncidentDate")
                         .HasColumnType("date");
 
                     b.Property<int>("PolicyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ReviewedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ReviewedByUserId")
                         .HasColumnType("int");
 
                     b.Property<string>("StaffRemarks")
@@ -76,7 +88,11 @@ namespace InsuranceSystem2._0.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("DecidedByUserId");
+
                     b.HasIndex("PolicyId");
+
+                    b.HasIndex("ReviewedByUserId");
 
                     b.ToTable("Claims");
                 });
@@ -253,6 +269,59 @@ namespace InsuranceSystem2._0.Migrations
                         .IsUnique();
 
                     b.ToTable("InsuranceProducts");
+                });
+
+            modelBuilder.Entity("InsuranceSystem2._0.Models.PendingRegistration", b =>
+                {
+                    b.Property<int>("PendingRegistrationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PendingRegistrationId"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("FailedAttempts")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("LastOtpSentAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MobileNumber")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<DateTime>("OtpExpiry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OtpHash")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("PendingRegistrationId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("PendingRegistrations");
                 });
 
             modelBuilder.Entity("InsuranceSystem2._0.Models.Policy", b =>
@@ -476,15 +545,29 @@ namespace InsuranceSystem2._0.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("InsuranceSystem2._0.Models.User", "DecidedByUser")
+                        .WithMany()
+                        .HasForeignKey("DecidedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("InsuranceSystem2._0.Models.Policy", "Policy")
                         .WithMany("Claims")
                         .HasForeignKey("PolicyId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("InsuranceSystem2._0.Models.User", "ReviewedByUser")
+                        .WithMany()
+                        .HasForeignKey("ReviewedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("Customer");
 
+                    b.Navigation("DecidedByUser");
+
                     b.Navigation("Policy");
+
+                    b.Navigation("ReviewedByUser");
                 });
 
             modelBuilder.Entity("InsuranceSystem2._0.Models.ClaimDocument", b =>

@@ -27,6 +27,9 @@ namespace InsuranceSystem2._0.Repositories.Interfaces
         Task<(IEnumerable<Claim> Claims, int TotalRecords)> GetPagedClaimsAsync(ClaimPaginationRequestDto request);
         Task<bool> IsClaimOwnedByCustomerAsync(int claimId, int customerId);
         Task<bool> HasOpenClaimAsync(int policyId, DateOnly incidentDate);
-    }
 
+        // NEW: total amount of claims on a policy that still count against coverage
+        // (everything except Rejected)
+        Task<decimal> GetReservedCoverageAmountAsync(int policyId);
+    }
 }

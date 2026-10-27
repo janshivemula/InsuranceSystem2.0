@@ -5,7 +5,10 @@ namespace InsuranceSystem2._0.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<UserResponseDto> RegisterCustomerAsync(RegisterRequestDto dto);
+        // CHANGED: registration is now a 2-step flow (OTP verification)
+        Task<OtpSentResponseDto> RegisterCustomerAsync(RegisterRequestDto dto);   // step 1: send OTP
+        Task<UserResponseDto> VerifyRegistrationOtpAsync(VerifyOtpRequestDto dto); // step 2: create user
+        Task<OtpSentResponseDto> ResendRegistrationOtpAsync(ResendOtpRequestDto dto); // NEW
 
         Task<LoginResponseDto> LoginAsync(LoginRequestDto dto);
 
