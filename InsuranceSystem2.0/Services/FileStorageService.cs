@@ -26,20 +26,25 @@ namespace InsuranceSystem2._0.Services
             _environment = environment;
         }
 
+
         public async Task<string> SaveClaimDocumentAsync(IFormFile file)
         {
-            // Validate file
+            // 1. Validate file
             if (file == null || file.Length == 0)
             {
-                throw new BadRequestException("Please select a document.");
+                throw new BadRequestException(
+                    "Please select a document.");
             }
 
             if (file.Length > MaxFileSize)
             {
-                throw new BadRequestException("File size cannot exceed 10 MB.");
+                throw new BadRequestException(
+                    "File size cannot exceed 10 MB.");
             }
 
-            var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            // 2. Validate extension
+            var extension = Path.GetExtension(file.FileName)
+                .ToLowerInvariant();
 
             if (!_allowedExtensions.Contains(extension))
             {
@@ -47,31 +52,46 @@ namespace InsuranceSystem2._0.Services
                     "Only PDF, JPG, JPEG, PNG, DOC and DOCX files are allowed.");
             }
 
-            // Create upload folder if it doesn't exist
+            // 3. Get the web root directory safely
+            var webRootPath = _environment.WebRootPath;
+
+            if (string.IsNullOrWhiteSpace(webRootPath))
+            {
+                webRootPath = Path.Combine(
+                    _environment.ContentRootPath,
+                    "wwwroot");
+            }
+
+            // 4. Create the uploads/claims folder
             var uploadsFolder = Path.Combine(
-                _environment.WebRootPath,
+                webRootPath,
                 "uploads",
                 "claims");
 
-            if (!Directory.Exists(uploadsFolder))
-            {
-                Directory.CreateDirectory(uploadsFolder);
-            }
+            Directory.CreateDirectory(uploadsFolder);
 
-            // Generate unique file name
+            // 5. Generate a unique file name
             var fileName = $"{Guid.NewGuid()}{extension}";
 
-            var fullPath = Path.Combine(uploadsFolder, fileName);
+            var fullPath = Path.Combine(
+                uploadsFolder,
+                fileName);
 
-            // Save file
-            using (var stream = new FileStream(fullPath, FileMode.Create))
+            // 6. Save the uploaded file
+            await using (var stream = new FileStream(
+                fullPath,
+                FileMode.Create,
+                FileAccess.Write))
             {
                 await file.CopyToAsync(stream);
             }
 
-            // Return relative path to store in database
-            return Path.Combine("uploads", "claims", fileName)
-                .Replace("\\", "/");
+            // 7. Return the relative path for the database
+            return Path.Combine(
+                "uploads",
+                "claims",
+                fileName).Replace("\\", "/");
         }
+
     }
 }

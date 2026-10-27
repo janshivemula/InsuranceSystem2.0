@@ -19,6 +19,7 @@ namespace InsuranceSystem2._0.Repositories.Implementations
         }
 
         // Select policy details and related data.
+
         private IQueryable<Policy> GetPolicyQuery()
         {
             return _context.Policies.Select(p => new Policy
@@ -32,26 +33,42 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 PolicyStatus = p.PolicyStatus,
                 CreatedDate = p.CreatedDate,
 
+                // Include payment tracking properties
+                TotalPremiumPaid = p.TotalPremiumPaid,
+                LastPaymentDate = p.LastPaymentDate,
+                NextDueDate = p.NextDueDate,
+                UpdatedDate = p.UpdatedDate,
+
                 Customer = p.Customer == null ? null : new Customer
                 {
                     CustomerId = p.Customer.CustomerId,
                     UserId = p.Customer.UserId,
+                    IsActive = p.Customer.IsActive,
                     User = p.Customer.User
                 },
 
-                InsuranceProduct = p.InsuranceProduct,
+                InsuranceProduct = p.InsuranceProduct == null
+                    ? null
+                    : p.InsuranceProduct,
 
-                Plan = p.Plan == null ? null : new()
+                Plan = p.Plan == null ? null : new PolicyPlan
                 {
-                    // Select the insurance product associated with the plan.
+                    PlanId = p.Plan.PlanId,
+                    InsuranceProductId = p.Plan.InsuranceProductId,
+                    PlanName = p.Plan.PlanName,
+                    CoverageAmount = p.Plan.CoverageAmount,
+                    PremiumAmount = p.Plan.PremiumAmount,
+                    PremiumType = p.Plan.PremiumType,
+                    DurationInYears = p.Plan.DurationInYears,
+                    TermsAndConditions = p.Plan.TermsAndConditions,
+                    IsActive = p.Plan.IsActive,
                     InsuranceProduct = p.Plan.InsuranceProduct
                 },
 
-                Payments = p.Payments
-                    .Select(payment => payment)
-                    .ToList()
+                Payments = p.Payments.ToList()
             });
         }
+
 
         // Retrieves all policies with filtering, sorting and pagination.
         public async Task<PagedResult<Policy>> GetAllAsync(
