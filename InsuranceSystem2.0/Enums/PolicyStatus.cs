@@ -5,6 +5,7 @@
         PendingPayment,
         Active,
         Expired,
-        Cancelled
+        Cancelled,
+        Scheduled
     }
 }

@@ -30,6 +30,20 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 ClaimStatus = c.ClaimStatus,
                 CreatedDate = c.CreatedDate,
 
+                // NEW: fields that were missing from the projection
+                ClaimReason = c.ClaimReason,
+                StaffRemarks = c.StaffRemarks,
+                AdminRemarks = c.AdminRemarks,
+                UpdatedDate = c.UpdatedDate,
+
+                // NEW: reviewer (staff) and decider (admin) tracking
+                ReviewedByUserId = c.ReviewedByUserId,
+                ReviewedByUser = c.ReviewedByUser,
+                ReviewedAt = c.ReviewedAt,
+                DecidedByUserId = c.DecidedByUserId,
+                DecidedByUser = c.DecidedByUser,
+                DecidedAt = c.DecidedAt,
+
                 Customer = c.Customer == null ? null : new Customer
                 {
                     CustomerId = c.Customer.CustomerId,
@@ -113,10 +127,15 @@ namespace InsuranceSystem2._0.Repositories.Implementations
         }
 
         // Updates an existing claim.
-        public Task UpdateAsync(Claim claim)
+        // CHANGED: the claim passed in comes from a projection (not tracked),
+        // so we load the real tracked row and copy only the claim's own values.
+        // This avoids overwriting Customer/Policy rows with partial data.
+        public async Task UpdateAsync(Claim claim)
         {
-            _context.Claims.Update(claim);
-            return Task.CompletedTask;
+            var tracked = await _context.Claims
+                .FirstAsync(c => c.ClaimId == claim.ClaimId);
+
+            _context.Entry(tracked).CurrentValues.SetValues(claim);
         }
 
         // Checks whether a claim number already exists.
@@ -204,6 +223,18 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 c.IncidentDate == incidentDate &&
                 c.ClaimStatus != ClaimStatus.Rejected &&
                 c.ClaimStatus != ClaimStatus.Approved);
+        }
+
+        // NEW: Sums all claims on the policy that still use up coverage.
+        // Submitted, UnderReview, RecommendedFor*, and Approved are counted;
+        // Rejected claims release their amount.
+        public async Task<decimal> GetReservedCoverageAmountAsync(int policyId)
+        {
+            return await _context.Claims
+                .Where(c =>
+                    c.PolicyId == policyId &&
+                    c.ClaimStatus != ClaimStatus.Rejected)
+                .SumAsync(c => c.ClaimAmount);
         }
 
         // Saves all pending changes.

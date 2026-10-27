@@ -25,6 +25,7 @@ namespace InsuranceSystem2._0.Models
         [Range(1, double.MaxValue, ErrorMessage = "Coverage Amount must be greater than zero.")]
         public decimal CoverageAmount { get; set; }
 
+        // here premium amount means per installement not the whole premium 
         [Required(ErrorMessage = "Premium Amount is required.")]
         [Range(1, double.MaxValue, ErrorMessage = "Premium Amount must be greater than zero.")]
         public decimal PremiumAmount { get; set; }

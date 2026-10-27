@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using InsuranceSystem2._0.Settings;   
 using System.Text;
 
 
@@ -52,6 +53,13 @@ namespace InsuranceSystem2._0
             builder.Services.AddScoped<IPremiumPaymentService, PremiumPaymentService>();
             builder.Services.AddScoped<IFileStorageService, FileStorageService>();
             builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
+
+            //  activates Scheduled policies when their start date arrives
+            builder.Services.AddHostedService<PolicyActivationService>();
+
+            //  email sending for OTP verification
+            builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+            builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
 
 
             // AutoMapper
@@ -143,7 +151,7 @@ namespace InsuranceSystem2._0
                 var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 await DbSeeder.SeedAdminAsync(dbContext);
             }
-   
+
 
             // Swagger
             if (app.Environment.IsDevelopment())

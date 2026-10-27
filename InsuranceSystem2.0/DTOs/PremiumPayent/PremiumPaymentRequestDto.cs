@@ -12,10 +12,6 @@ namespace InsuranceSystem2._0.DTOs.PremiumPayent
         [EnumDataType(typeof(PaymentMode), ErrorMessage = "Invalid payment mode.")]
         public PaymentMode PaymentMode { get; set; }
 
-
-        [Required(ErrorMessage = "Transaction reference is required.")]
-        [StringLength(100, MinimumLength = 5,
-            ErrorMessage = "Transaction reference must be between 5 and 100 characters.")]
-        public string TransactionReference { get; set; } = string.Empty;
+        
     }
 }

@@ -186,6 +186,16 @@ namespace InsuranceManagementSystem.Services.Implementations
                 if (requestDto.ClaimAmount > policy.Plan.CoverageAmount)
                     throw new BadRequestException($"Claim amount cannot exceed policy coverage amount of {policy.Plan.CoverageAmount}.");
 
+                // NEW: remaining coverage validation across all claims of this policy.
+                // Rejected claims are excluded, so their amount is released automatically.
+                var reservedCoverage = await _claimRepository.GetReservedCoverageAmountAsync(requestDto.PolicyId);
+                var remainingCoverage = policy.Plan.CoverageAmount - reservedCoverage;
+
+                if (requestDto.ClaimAmount > remainingCoverage)
+                    throw new BadRequestException(
+                        $"Claim amount exceeds the remaining coverage of {remainingCoverage:N2}. " +
+                        $"Total coverage: {policy.Plan.CoverageAmount:N2}, already used or reserved by existing claims: {reservedCoverage:N2}.");
+
                 if (incidentDate > DateOnly.FromDateTime(DateTime.UtcNow))
                     throw new BadRequestException("Incident date cannot be in the future.");
 
@@ -383,6 +393,10 @@ namespace InsuranceManagementSystem.Services.Implementations
             claim.StaffRemarks = requestDto.Remarks.Trim();
             claim.UpdatedDate = DateTime.UtcNow;
 
+            // NEW: record which staff member reviewed the claim and when
+            claim.ReviewedByUserId = staffUserId;
+            claim.ReviewedAt = DateTime.UtcNow;
+
             await _claimRepository.UpdateAsync(claim);
 
             var history = new ClaimStatusHistory
@@ -437,6 +451,10 @@ namespace InsuranceManagementSystem.Services.Implementations
             claim.ClaimStatus = requestDto.FinalDecisionStatus;
             claim.AdminRemarks = requestDto.Remarks.Trim();
             claim.UpdatedDate = DateTime.UtcNow;
+
+            // NEW: record which admin made the final decision and when
+            claim.DecidedByUserId = adminUserId;
+            claim.DecidedAt = DateTime.UtcNow;
 
             await _claimRepository.UpdateAsync(claim);
 

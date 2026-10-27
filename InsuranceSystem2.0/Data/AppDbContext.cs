@@ -1,6 +1,5 @@
 ﻿using InsuranceSystem2._0.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace InsuranceSystem2._0.Data
 {
@@ -20,6 +19,7 @@ namespace InsuranceSystem2._0.Data
         public DbSet<Claim> Claims { get; set; }
         public DbSet<ClaimDocument> ClaimDocuments { get; set; }
         public DbSet<ClaimStatusHistory> ClaimStatusHistories { get; set; }
+        public DbSet<PendingRegistration> PendingRegistrations { get; set; }   // NEW
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -107,6 +107,24 @@ namespace InsuranceSystem2._0.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             // =========================
+            // CLAIM -> REVIEWING STAFF (Optional)
+            // =========================
+            modelBuilder.Entity<Claim>()
+                .HasOne(c => c.ReviewedByUser)
+                .WithMany()
+                .HasForeignKey(c => c.ReviewedByUserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // =========================
+            // CLAIM -> DECIDING ADMIN (Optional)
+            // =========================
+            modelBuilder.Entity<Claim>()
+                .HasOne(c => c.DecidedByUser)
+                .WithMany()
+                .HasForeignKey(c => c.DecidedByUserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // =========================
             // CLAIM -> CLAIM DOCUMENT (One to Many)
             // =========================
             modelBuilder.Entity<Claim>()
@@ -147,10 +165,15 @@ namespace InsuranceSystem2._0.Data
                 .HasIndex(c => c.ClaimNumber)
                 .IsUnique();
 
-            // Optional: if you want plan names unique within a product, uncomment this
+            // Plan names unique within a product
             modelBuilder.Entity<PolicyPlan>()
                 .HasIndex(pp => new { pp.InsuranceProductId, pp.PlanName })
-               .IsUnique();
+                .IsUnique();
+
+            // NEW: one pending registration per email
+            modelBuilder.Entity<PendingRegistration>()
+                .HasIndex(p => p.Email)
+                .IsUnique();
         }
     }
 }

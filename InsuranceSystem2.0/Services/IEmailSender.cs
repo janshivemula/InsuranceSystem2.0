@@ -1,0 +1,7 @@
+﻿namespace InsuranceSystem2._0.Services.Interfaces
+{
+    public interface IEmailSender
+    {
+        Task SendAsync(string toEmail, string subject, string htmlBody);
+    }
+}

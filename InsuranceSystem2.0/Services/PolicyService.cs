@@ -11,6 +11,9 @@ namespace InsuranceSystem2._0.Services.Implementations
 {
     public class PolicyService : IPolicyService
     {
+        // NEW: how far in the future a customer may schedule the start date
+        private const int MaxStartDateAdvanceDays = 90;
+
         private readonly IPolicyRepository _policyRepository;
         private readonly ICustomerRepository _customerRepository;
         private readonly IPolicyPlanRepository _planRepository;
@@ -287,6 +290,11 @@ namespace InsuranceSystem2._0.Services.Implementations
             if (requestDto.StartDate < DateOnly.FromDateTime(DateTime.UtcNow))
                 throw new BadRequestException("Start date cannot be in the past.");
 
+            // NEW: limit how far ahead the start date can be scheduled
+            if (requestDto.StartDate > DateOnly.FromDateTime(DateTime.UtcNow).AddDays(MaxStartDateAdvanceDays))
+                throw new BadRequestException(
+                    $"Start date cannot be more than {MaxStartDateAdvanceDays} days in the future.");
+
             var policy = new Policy
             {
                 PolicyNumber = await GeneratePolicyNumberAsync(),
@@ -369,6 +377,11 @@ namespace InsuranceSystem2._0.Services.Implementations
 
             if (requestDto.StartDate < DateOnly.FromDateTime(DateTime.UtcNow))
                 throw new BadRequestException("Start date cannot be in the past.");
+
+            // NEW: limit how far ahead the start date can be scheduled
+            if (requestDto.StartDate > DateOnly.FromDateTime(DateTime.UtcNow).AddDays(MaxStartDateAdvanceDays))
+                throw new BadRequestException(
+                    $"Start date cannot be more than {MaxStartDateAdvanceDays} days in the future.");
 
             var policy = new Policy
             {
@@ -490,48 +503,23 @@ namespace InsuranceSystem2._0.Services.Implementations
             }
 
 
-
-            if (policy.LastPaymentDate.HasValue)
+            // CHANGED: the next due date is now calculated from the policy START DATE
+            // and the number of installments already paid (not from the last payment
+            // date). This way, paying early (before the start date) does not shift
+            // the schedule: a monthly policy starting 2 Nov, first paid on 26 Oct,
+            // has its next installment due on 2 Dec.
+            int monthsPerInstallment = policy.Plan.PremiumType switch
             {
-                switch (policy.Plan.PremiumType)
-                {
-                    case PremiumType.Monthly:
+                PremiumType.Monthly => 1,
+                PremiumType.Quarterly => 3,
+                PremiumType.HalfYearly => 6,
+                PremiumType.Annual => 12,
+                _ => 0
+            };
 
-                        policy.NextDueDate =
-                            policy.LastPaymentDate.Value.AddMonths(1);
-
-                        break;
-
-
-                    case PremiumType.Quarterly:
-
-                        policy.NextDueDate =
-                            policy.LastPaymentDate.Value.AddMonths(3);
-
-                        break;
-
-
-                    case PremiumType.HalfYearly:
-
-                        policy.NextDueDate =
-                            policy.LastPaymentDate.Value.AddMonths(6);
-
-                        break;
-
-
-                    case PremiumType.Annual:
-
-                        policy.NextDueDate =
-                            policy.LastPaymentDate.Value.AddYears(1);
-
-                        break;
-                }
-            }
-            else
-            {
-                policy.NextDueDate =
-                    policy.StartDate.ToDateTime(TimeOnly.MinValue);
-            }
+            policy.NextDueDate = policy.StartDate
+                .ToDateTime(TimeOnly.MinValue)
+                .AddMonths(monthsPerInstallment * successfulPayments.Count);
         }
 
         private void PopulatePaymentDetails(PolicyResponseDto dto, Policy policy)

@@ -167,26 +167,50 @@ namespace InsuranceSystem2._0.MappingProfile
 
 
             CreateMap<ClaimRequestDto, Claim>()
-                .ForMember(dest => dest.IncidentDate,
-                    opt => opt.MapFrom(src => DateOnly.FromDateTime(src.IncidentDate)));
+    .ForMember(
+        dest => dest.IncidentDate,
+        opt => opt.MapFrom(src =>
+            DateOnly.FromDateTime(src.IncidentDate)));
 
             CreateMap<Claim, ClaimResponseDto>()
-                .ForMember(dest => dest.PolicyNumber,
+                .ForMember(
+                    dest => dest.PolicyNumber,
                     opt => opt.MapFrom(src => src.Policy.PolicyNumber))
-                .ForMember(dest => dest.ProductName,
-        opt => opt.MapFrom(src => src.Policy.Plan.InsuranceProduct.ProductName))
-
-    .ForMember(dest => dest.PlanName,
-        opt => opt.MapFrom(src => src.Policy.Plan.PlanName))
-
-                .ForMember(dest => dest.CustomerName,
-                    opt => opt.MapFrom(src => src.Customer.User.FullName))
-                .ForMember(dest => dest.IncidentDate,
-                    opt => opt.MapFrom(src => src.IncidentDate.ToDateTime(TimeOnly.MinValue)))
-                .ForMember(dest => dest.Documents,
+                .ForMember(
+                    dest => dest.ProductName,
+                    opt => opt.MapFrom(src =>
+                        src.Policy.Plan.InsuranceProduct.ProductName))
+                .ForMember(
+                    dest => dest.PlanName,
+                    opt => opt.MapFrom(src =>
+                        src.Policy.Plan.PlanName))
+                .ForMember(
+                    dest => dest.CustomerName,
+                    opt => opt.MapFrom(src =>
+                        src.Customer.User.FullName))
+                .ForMember(
+                    dest => dest.IncidentDate,
+                    opt => opt.MapFrom(src =>
+                        src.IncidentDate.ToDateTime(TimeOnly.MinValue)))
+                .ForMember(
+                    dest => dest.ReviewedByName,
+                    opt => opt.MapFrom(src =>
+                        src.ReviewedByUser == null
+                            ? null
+                            : src.ReviewedByUser.FullName))
+                .ForMember(
+                    dest => dest.DecidedByName,
+                    opt => opt.MapFrom(src =>
+                        src.DecidedByUser == null
+                            ? null
+                            : src.DecidedByUser.FullName))
+                .ForMember(
+                    dest => dest.Documents,
                     opt => opt.MapFrom(src => src.ClaimDocuments))
-                .ForMember(dest => dest.StatusHistory,
+                .ForMember(
+                    dest => dest.StatusHistory,
                     opt => opt.MapFrom(src => src.ClaimStatusHistories));
+
         }
     }
 }
