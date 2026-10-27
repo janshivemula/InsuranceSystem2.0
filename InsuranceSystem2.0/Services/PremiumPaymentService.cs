@@ -354,7 +354,10 @@ public class PremiumPaymentService : IPremiumPaymentService
 
 
 
-        return _mapper.Map<PremiumPaymentResponseDto>(payment);
+        // NEW: reload the saved payment so Customer, User and Policy are populated
+        var savedPayment = await _premiumPaymentRepository.GetByIdAsync(payment.PaymentId);
+
+        return _mapper.Map<PremiumPaymentResponseDto>(savedPayment ?? payment);
     }
 
     // NEW: generates a unique transaction reference, e.g. TXN20261026143015A1B2C3D4
