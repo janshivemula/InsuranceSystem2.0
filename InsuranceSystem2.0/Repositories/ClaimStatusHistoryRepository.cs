@@ -43,6 +43,7 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                     User = h.User == null ? null! : new User
                     {
                         UserId = h.User.UserId,
+                        FullName=h.User.FullName,
                         Email = h.User.Email
                     }
                 });

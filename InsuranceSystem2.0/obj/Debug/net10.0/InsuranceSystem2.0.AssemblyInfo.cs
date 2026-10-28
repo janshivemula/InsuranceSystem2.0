@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a1753e3b-79bd-4f06-a460-02a450507cf3")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("InsuranceSystem2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35006a64fd02efa3f8b9d55967a39ae686054acf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d58c82e0dd08de89a9a429b11df527c54d26f81a")]
 [assembly: System.Reflection.AssemblyProductAttribute("InsuranceSystem2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InsuranceSystem2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

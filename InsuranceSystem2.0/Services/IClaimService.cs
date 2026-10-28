@@ -33,8 +33,8 @@ namespace InsuranceSystem2._0.Services.Interfaces
 
         Task<PagedResponse<ClaimResponseDto>> GetPagedClaimsAsync(ClaimPaginationRequestDto request);
 
-        Task ReviewClaimByStaffAsync(int claimId, int staffUserId, ClaimReviewDto requestDto);
+        Task<ClaimResponseDto> ReviewClaimByStaffAsync(int claimId,int staffUserId,ClaimReviewDto requestDto);
 
-        Task DecideClaimByAdminAsync(int claimId, int adminUserId, ClaimDecisionDto requestDto);
+        Task<ClaimResponseDto> DecideClaimByAdminAsync(int claimId,int adminUserId,ClaimDecisionDto requestDto);
     }
 }

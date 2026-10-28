@@ -51,11 +51,26 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                     User = c.Customer.User
                 },
 
+
                 Policy = c.Policy == null ? null : new Policy
                 {
                     PolicyId = c.Policy.PolicyId,
-                    Plan = c.Policy.Plan
+                    PolicyNumber = c.Policy.PolicyNumber,
+
+                    Plan = c.Policy.Plan == null ? null! : new PolicyPlan
+                    {
+                        PlanId = c.Policy.Plan.PlanId,
+                        PlanName = c.Policy.Plan.PlanName,
+
+                        InsuranceProduct =c.Policy.Plan.InsuranceProduct == null? null!: new InsuranceProduct
+                {
+                    ProductId =c.Policy.Plan.InsuranceProduct.ProductId,
+
+                    ProductName = c.Policy.Plan.InsuranceProduct.ProductName
+                }
+                    }
                 },
+
 
                 ClaimDocuments = c.ClaimDocuments
                     .Select(d => d)

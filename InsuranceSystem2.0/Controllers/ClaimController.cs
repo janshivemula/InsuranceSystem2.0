@@ -231,38 +231,40 @@ namespace InsuranceSystem2._0.Controllers
 
         [Authorize(Roles = "InternalStaff")]
         [HttpPut("{claimId:int}/review")]
-        public async Task<IActionResult> ReviewClaim(int claimId, [FromBody] ClaimReviewDto requestDto)
+        public async Task<IActionResult> ReviewClaim(int claimId,[FromBody] ClaimReviewDto requestDto)
         {
             int staffUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            await _claimService.ReviewClaimByStaffAsync(claimId, staffUserId, requestDto);
+            var claim = await _claimService.ReviewClaimByStaffAsync(claimId, staffUserId, requestDto);
 
-            return Ok(new ApiResponse<string>
+            return Ok(new ApiResponse<ClaimResponseDto>
             {
                 Success = true,
                 Message = "Claim reviewed successfully.",
-                Data = null,
+                Data = claim,
                 Timestamp = DateTime.UtcNow
             });
         }
+
 
         // Admin Decision
 
         [Authorize(Roles = "Admin")]
         [HttpPut("{claimId:int}/decision")]
-        public async Task<IActionResult> DecideClaim(int claimId, [FromBody] ClaimDecisionDto requestDto)
+        public async Task<IActionResult> DecideClaim(int claimId,[FromBody] ClaimDecisionDto requestDto)
         {
             int adminUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
-            await _claimService.DecideClaimByAdminAsync(claimId, adminUserId, requestDto);
+            var claim = await _claimService.DecideClaimByAdminAsync(claimId, adminUserId, requestDto);
 
-            return Ok(new ApiResponse<string>
+            return Ok(new ApiResponse<ClaimResponseDto>
             {
                 Success = true,
                 Message = "Claim decision recorded successfully.",
-                Data = null,
+                Data = claim,
                 Timestamp = DateTime.UtcNow
             });
         }
+
     }
 }

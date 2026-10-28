@@ -49,7 +49,6 @@ namespace InsuranceManagementSystem.Services.Implementations
             _logger = logger;
             _fileStorageService = fileStorageService;
         }
-
         public async Task<IEnumerable<ClaimResponseDto>> GetAllClaimsAsync()
         {
             var claims = await _claimRepository.GetAllAsync();
@@ -108,8 +107,6 @@ namespace InsuranceManagementSystem.Services.Implementations
                 SortDirection = request.SortDirection
             };
         }
-
-
         public async Task<ClaimResponseDto?> GetClaimByIdAsync(int claimId, int userId, UserRole role)
         {
             var claim = await _claimRepository.GetByIdAsync(claimId);
@@ -130,7 +127,6 @@ namespace InsuranceManagementSystem.Services.Implementations
 
             return _mapper.Map<ClaimResponseDto>(claim);
         }
-
         public async Task<ClaimResponseDto?> GetClaimByClaimNumberAsync(string claimNumber)
         {
             if (string.IsNullOrWhiteSpace(claimNumber))
@@ -143,7 +139,6 @@ namespace InsuranceManagementSystem.Services.Implementations
 
             return _mapper.Map<ClaimResponseDto>(claim);
         }
-
         public async Task<ClaimResponseDto> CreateClaimAsync(int userId, ClaimRequestDto requestDto)
         {
             await using var transaction = await _context.Database.BeginTransactionAsync();
@@ -288,7 +283,6 @@ namespace InsuranceManagementSystem.Services.Implementations
 
             return claimNumber;
         }
-
         public async Task<ClaimDocumentResponseDto> AddClaimDocumentAsync(int userId, UserRole role, ClaimDocumentRequestDto requestDto)
         {
             if (role == UserRole.Customer)
@@ -326,8 +320,6 @@ namespace InsuranceManagementSystem.Services.Implementations
 
             return _mapper.Map<ClaimDocumentResponseDto>(document);
         }
-
-
         public async Task<IEnumerable<ClaimDocumentResponseDto>> GetClaimDocumentsAsync(int claimId, int userId, UserRole role)
         {
             if (role == UserRole.Customer)
@@ -344,8 +336,6 @@ namespace InsuranceManagementSystem.Services.Implementations
 
             return _mapper.Map<IEnumerable<ClaimDocumentResponseDto>>(documents);
         }
-
-
         public async Task<IEnumerable<ClaimStatusHistoryResponseDto>> GetClaimStatusHistoryAsync(int claimId, int userId, UserRole role)
         {
             if (role == UserRole.Customer)
@@ -363,7 +353,10 @@ namespace InsuranceManagementSystem.Services.Implementations
             return _mapper.Map<IEnumerable<ClaimStatusHistoryResponseDto>>(histories);
         }
 
-        public async Task ReviewClaimByStaffAsync(int claimId, int staffUserId, ClaimReviewDto requestDto)
+        public async Task<ClaimResponseDto> ReviewClaimByStaffAsync(
+            int claimId,
+            int staffUserId,
+            ClaimReviewDto requestDto)
         {
             var claim = await _claimRepository.GetByIdAsync(claimId);
 
@@ -376,26 +369,39 @@ namespace InsuranceManagementSystem.Services.Implementations
                 throw new NotFoundException("Internal staff not found.");
 
             if (staff.Role != UserRole.InternalStaff)
-                throw new BadRequestException("Only Internal Staff can review claims.");
+                throw new BadRequestException(
+                    "Only Internal Staff can review claims.");
 
             if (!staff.IsActive)
-                throw new BadRequestException("Inactive Internal Staff cannot review claims.");
+                throw new BadRequestException(
+                    "Inactive Internal Staff cannot review claims.");
 
-            if (claim.ClaimStatus == ClaimStatus.Approved || claim.ClaimStatus == ClaimStatus.Rejected)
-                throw new BadRequestException("Closed claims cannot be reviewed.");
+            if (claim.ClaimStatus == ClaimStatus.Approved ||
+                claim.ClaimStatus == ClaimStatus.Rejected)
+            {
+                throw new BadRequestException(
+                    "Closed claims cannot be reviewed.");
+            }
 
-            if (!ClaimStatusValidator.IsValidTransition(claim.ClaimStatus, requestDto.RecommendedStatus))
-                throw new BadRequestException($"Invalid status transition from {claim.ClaimStatus} to {requestDto.RecommendedStatus}.");
+            if (!ClaimStatusValidator.IsValidTransition(
+                    claim.ClaimStatus, requestDto.RecommendedStatus))
+            {
+                throw new BadRequestException(
+                    $"Invalid status transition from {claim.ClaimStatus} " +
+                    $"to {requestDto.RecommendedStatus}.");
+            }
+
+            if (string.IsNullOrWhiteSpace(requestDto.Remarks))
+                throw new BadRequestException("Review remarks are required.");
 
             var previousStatus = claim.ClaimStatus;
+            var now = DateTime.UtcNow;
 
             claim.ClaimStatus = requestDto.RecommendedStatus;
             claim.StaffRemarks = requestDto.Remarks.Trim();
-            claim.UpdatedDate = DateTime.UtcNow;
-
-            // NEW: record which staff member reviewed the claim and when
             claim.ReviewedByUserId = staffUserId;
-            claim.ReviewedAt = DateTime.UtcNow;
+            claim.ReviewedAt = now;
+            claim.UpdatedDate = now;
 
             await _claimRepository.UpdateAsync(claim);
 
@@ -406,7 +412,7 @@ namespace InsuranceManagementSystem.Services.Implementations
                 NewStatus = requestDto.RecommendedStatus,
                 Remarks = requestDto.Remarks.Trim(),
                 UpdatedBy = staffUserId,
-                UpdatedDate = DateTime.UtcNow
+                UpdatedDate = now
             };
 
             await _claimStatusHistoryRepository.AddAsync(history);
@@ -415,14 +421,25 @@ namespace InsuranceManagementSystem.Services.Implementations
             await _claimStatusHistoryRepository.SaveChangesAsync();
 
             _logger.LogInformation(
-                "Internal Staff {StaffUserId} reviewed Claim {ClaimId}. Status changed from {OldStatus} to {NewStatus}.",
-                staffUserId,
-                claimId,
-                previousStatus,
-                requestDto.RecommendedStatus);
+                "Staff {StaffUserId} reviewed claim {ClaimId}.",
+                staffUserId, claimId);
+
+            // Reload claim using the repository's related-data query.
+            var updatedClaim = await _claimRepository.GetByIdAsync(claimId);
+
+            if (updatedClaim == null)
+                throw new NotFoundException(
+                    "Claim was saved but could not be retrieved.");
+
+            return _mapper.Map<ClaimResponseDto>(updatedClaim);
         }
 
-        public async Task DecideClaimByAdminAsync(int claimId, int adminUserId, ClaimDecisionDto requestDto)
+
+
+        public async Task<ClaimResponseDto> DecideClaimByAdminAsync(
+            int claimId,
+            int adminUserId,
+            ClaimDecisionDto requestDto)
         {
             var claim = await _claimRepository.GetByIdAsync(claimId);
 
@@ -435,26 +452,39 @@ namespace InsuranceManagementSystem.Services.Implementations
                 throw new NotFoundException("Admin not found.");
 
             if (admin.Role != UserRole.Admin)
-                throw new BadRequestException("Only Admin can approve or reject claims.");
+                throw new BadRequestException(
+                    "Only Admin can approve or reject claims.");
 
             if (!admin.IsActive)
-                throw new BadRequestException("Inactive Admin cannot approve or reject claims.");
+                throw new BadRequestException(
+                    "Inactive Admin cannot approve or reject claims.");
 
-            if (claim.ClaimStatus == ClaimStatus.Approved || claim.ClaimStatus == ClaimStatus.Rejected)
-                throw new BadRequestException("Claim has already been closed.");
+            if (claim.ClaimStatus == ClaimStatus.Approved ||
+                claim.ClaimStatus == ClaimStatus.Rejected)
+            {
+                throw new BadRequestException(
+                    "Claim has already been closed.");
+            }
 
-            if (!ClaimStatusValidator.IsValidTransition(claim.ClaimStatus, requestDto.FinalDecisionStatus))
-                throw new BadRequestException($"Invalid status transition from {claim.ClaimStatus} to {requestDto.FinalDecisionStatus}.");
+            if (!ClaimStatusValidator.IsValidTransition(
+                claim.ClaimStatus, requestDto.FinalDecisionStatus))
+            {
+                throw new BadRequestException(
+                    $"Invalid status transition from {claim.ClaimStatus} " +
+                    $"to {requestDto.FinalDecisionStatus}.");
+            }
+
+            if (string.IsNullOrWhiteSpace(requestDto.Remarks))
+                throw new BadRequestException("Admin remarks are required.");
 
             var previousStatus = claim.ClaimStatus;
+            var now = DateTime.UtcNow;
 
             claim.ClaimStatus = requestDto.FinalDecisionStatus;
             claim.AdminRemarks = requestDto.Remarks.Trim();
-            claim.UpdatedDate = DateTime.UtcNow;
-
-            // NEW: record which admin made the final decision and when
             claim.DecidedByUserId = adminUserId;
-            claim.DecidedAt = DateTime.UtcNow;
+            claim.DecidedAt = now;
+            claim.UpdatedDate = now;
 
             await _claimRepository.UpdateAsync(claim);
 
@@ -465,7 +495,7 @@ namespace InsuranceManagementSystem.Services.Implementations
                 NewStatus = requestDto.FinalDecisionStatus,
                 Remarks = requestDto.Remarks.Trim(),
                 UpdatedBy = adminUserId,
-                UpdatedDate = DateTime.UtcNow
+                UpdatedDate = now
             };
 
             await _claimStatusHistoryRepository.AddAsync(history);
@@ -474,13 +504,18 @@ namespace InsuranceManagementSystem.Services.Implementations
             await _claimStatusHistoryRepository.SaveChangesAsync();
 
             _logger.LogInformation(
-                "Admin {AdminUserId} made final decision on Claim {ClaimId}. Status changed from {OldStatus} to {NewStatus}.",
-                adminUserId,
-                claimId,
-                previousStatus,
-                requestDto.FinalDecisionStatus);
-        }
+                "Admin {AdminUserId} made final decision on Claim {ClaimId}.",
+                adminUserId, claimId);
 
+            var updatedClaim =
+                await _claimRepository.GetByIdAsync(claimId);
+
+            if (updatedClaim == null)
+                throw new NotFoundException(
+                    "Updated claim could not be retrieved.");
+
+            return _mapper.Map<ClaimResponseDto>(updatedClaim);
+        }
 
         private async Task ValidateClaimOwnershipAsync(int claimId, int userId)
         {
