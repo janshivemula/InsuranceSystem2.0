@@ -33,42 +33,59 @@ namespace InsuranceSystem2._0.Repositories.Implementations
                 users = users.Where(u => u.IsActive == query.IsActive.Value);
             }
 
-            // Validate Sort Direction
-            if (!query.SortDirection.Equals("asc", StringComparison.OrdinalIgnoreCase) &&
-                !query.SortDirection.Equals("desc", StringComparison.OrdinalIgnoreCase))
+            // Validate and normalize Sort Field
+            if (string.IsNullOrWhiteSpace(query.SortBy))
             {
-                throw new ArgumentException("SortDirection must be either 'asc' or 'desc'.");
+                query.SortBy = "CreatedDate";
+            }
+
+            query.SortBy = query.SortBy.Trim().ToLowerInvariant();
+
+            // Validate Sort Direction
+            if (string.IsNullOrWhiteSpace(query.SortDirection))
+            {
+                query.SortDirection = "desc";
+            }
+
+            query.SortDirection = query.SortDirection.Trim().ToLowerInvariant();
+
+            if (query.SortDirection != "asc" &&
+                query.SortDirection != "desc")
+            {
+                throw new ArgumentException(
+                    "SortDirection must be either 'asc' or 'desc'.");
             }
 
             // Sorting
-            switch (query.SortBy.ToLower())
+            switch (query.SortBy)
             {
                 case "fullname":
-                    users = query.SortDirection.Equals("asc", StringComparison.OrdinalIgnoreCase)
+                    users = query.SortDirection == "asc"
                         ? users.OrderBy(u => u.FullName)
                         : users.OrderByDescending(u => u.FullName);
                     break;
 
                 case "email":
-                    users = query.SortDirection.Equals("asc", StringComparison.OrdinalIgnoreCase)
+                    users = query.SortDirection == "asc"
                         ? users.OrderBy(u => u.Email)
                         : users.OrderByDescending(u => u.Email);
                     break;
 
                 case "role":
-                    users = query.SortDirection.Equals("asc", StringComparison.OrdinalIgnoreCase)
+                    users = query.SortDirection == "asc"
                         ? users.OrderBy(u => u.Role)
                         : users.OrderByDescending(u => u.Role);
                     break;
 
                 case "createddate":
-                    users = query.SortDirection.Equals("asc", StringComparison.OrdinalIgnoreCase)
+                    users = query.SortDirection == "asc"
                         ? users.OrderBy(u => u.CreatedDate)
                         : users.OrderByDescending(u => u.CreatedDate);
                     break;
 
                 default:
-                    throw new ArgumentException("Invalid sort field.");
+                    throw new ArgumentException(
+                        "Invalid sort field. Allowed fields: fullname, email, role, createddate.");
             }
 
             // Total Records

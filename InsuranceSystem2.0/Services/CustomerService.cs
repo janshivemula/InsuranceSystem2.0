@@ -44,9 +44,24 @@ namespace InsureFlowAPI.Services.Implementations
             if (query.PageSize > 100)
                 throw new BadRequestException("Maximum page size is 100.");
 
-            var allowedSortFields = new[] { "city", "state", "createddate" };
+            var allowedSortFields = new[]
+                {
+                    "city",
+                    "state",
+                    "createddate"
+                };
+
             if (string.IsNullOrWhiteSpace(query.SortBy))
+            {
                 query.SortBy = "CreatedDate";
+            }
+
+            query.SortBy = query.SortBy.Trim();
+
+            if (!allowedSortFields.Contains(query.SortBy,StringComparer.OrdinalIgnoreCase))
+            {
+                throw new BadRequestException("Invalid sort field. Allowed fields are: city, state, createddate");
+            }
 
             if (!allowedSortFields.Contains(query.SortBy.ToLower()))
                 throw new BadRequestException("Invalid sort field. Allowed fields are: city, state, createddate");

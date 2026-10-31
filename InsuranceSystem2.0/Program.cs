@@ -142,6 +142,17 @@ namespace InsuranceSystem2._0
             builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
             builder.Services.AddProblemDetails();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AngularPolicy", policy =>
+                {
+                    policy
+                        .WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
             app.UseExceptionHandler();
 
